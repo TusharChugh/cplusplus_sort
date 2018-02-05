@@ -39,7 +39,8 @@ namespace tlib {
 
     template <typename RandomIt, typename Compare>
     void merge_sort(RandomIt first, RandomIt last, Compare comp) {
-        std::vector<typename std::iterator_traits<RandomIt>::value_type> input_copy(last - first);
+        std::vector<typename std::iterator_traits<RandomIt>::value_type> input_copy(
+                std::distance(first, last));
         merge_sort(first, last, comp, input_copy.begin());
     }
 
