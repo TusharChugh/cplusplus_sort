@@ -7,7 +7,7 @@ namespace tlib {
 
     template <typename RandomIt, typename Compare>
     void merge(RandomIt first, RandomIt mid, RandomIt last, Compare comp,
-               typename std::vector<typename RandomIt::value_type>::iterator copy_iterator) {
+               typename std::vector<typename std::iterator_traits<RandomIt>::value_type>::iterator copy_iterator) {
 
         auto first_t = first;
         auto copy_iterator_t = copy_iterator;
@@ -24,7 +24,7 @@ namespace tlib {
 
     template <typename RandomIt, typename Compare>
     void merge_sort(RandomIt first, RandomIt last, Compare comp,
-                    typename std::vector<typename RandomIt::value_type>::iterator copy_iterator) {
+                    typename std::vector<typename std::iterator_traits<RandomIt>::value_type>::iterator copy_iterator) {
         const size_t size = std::distance(first, last);
         if (size <= 1) return;
 
