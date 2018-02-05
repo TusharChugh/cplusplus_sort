@@ -20,8 +20,10 @@ namespace tlib {
             if(left != right) std::swap(*left, *right);
         }
 
-        if(pivot != left && comp(*pivot, *left))
-            std::swap(*pivot, *left);
+        if(pivot != left && comp(*pivot, *left)) {
+            using std::swap;
+            swap(*pivot, *left);
+        }
 
         quick_sort(first, left, comp);
         quick_sort(++left, last, comp);

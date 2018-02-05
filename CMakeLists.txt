@@ -3,5 +3,6 @@ project(sort)
 
 set(CMAKE_CXX_STANDARD 11)
 include_directories(include)
-set(SOURCE_FILES main.cpp)
-add_executable(sort ${SOURCE_FILES})
+add_library(sort INTERFACE)
+target_link_libraries(sort INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
+add_subdirectory(test)
