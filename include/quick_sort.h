@@ -2,8 +2,8 @@
 #define SORT_QUICK_SORT_H
 
 namespace tlib {
-    template <typename RandomIt, typename Compare>
-    void quick_sort(RandomIt first, RandomIt last, Compare comp) {
+    template <typename BidirectionalIt, typename Compare>
+    void quick_sort(BidirectionalIt first, BidirectionalIt last, Compare comp) {
         const size_t size = std::distance(first, last);
         if(size <= 1) return;
 
@@ -29,9 +29,9 @@ namespace tlib {
         quick_sort(++left, last, comp);
     }
 
-    template <class RandomIt>
-    void quick_sort(RandomIt first, RandomIt last) {
-        quick_sort(first, last, std::less<typename std::iterator_traits<RandomIt>::value_type>());
+    template <class BidirectionalIt>
+    void quick_sort(BidirectionalIt first, BidirectionalIt last) {
+        quick_sort(first, last, std::less<typename std::iterator_traits<BidirectionalIt>::value_type>());
     }
 }
 

@@ -10,7 +10,7 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 enable_testing()
 
-set(SOURCE_FILES sort/unit_tests.cpp sort/merge_sort_test.cpp sort/quick_sort_test.cpp)
+set(SOURCE_FILES sort/unit_tests.cpp sort/merge_sort_test.cpp sort/quick_sort_test.cpp sort/selection_sort.cpp)
 
 add_executable(unittest_sort ${SOURCE_FILES})
 target_link_libraries(unittest_sort ${GTEST_LIBRARIES} sort pthread)

@@ -49,8 +49,6 @@ namespace tlib {
         merge_sort(first, last, std::less<typename std::iterator_traits<RandomIt>::value_type>());
     }
 
-
-
 } //namespace tlib
 
 #endif //MERGESORT_MERGESORT_H
